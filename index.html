@@ -163,9 +163,12 @@
         <!-- Màn hình chính -->
         <div class="main-content" id="mainContent">
             <h1>Tương lai của Anh💕</h1>
+            <img src="./img2/tangem.jpg" width="80px" alt="">
 
             <!-- Slideshow -->
             <div class="slideshow-container">
+                <audio id="myAudio" src="./audio/videoplayback.m4a" preload="auto"></audio>
+
                 <div class="mySlides">
 <img src="./img2/download (1).jpg" alt="">                </div>
                 <div class="mySlides">
@@ -230,6 +233,7 @@
         <!-- Dòng tin nhắn -->
         <div class="message" id="messageBox"></div>
     </div>
+
 
     <script>
         const correctPassword = "18102024"; // Đặt mật khẩu
@@ -300,7 +304,8 @@
         }
 
 
-function showSlides() {
+function showSlides() { var audio = document.getElementById("myAudio");
+        audio.play();
     const slides = document.getElementsByClassName("mySlides");
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
@@ -343,7 +348,10 @@ function showSlides() {
         updateProgress();
     }
     
-    window.onload = simulateLoading;
+    window.onload = function() {
+        simulateLoading()
+       
+    };
     </script>
 </body>
 </html>
